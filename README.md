@@ -1,5 +1,5 @@
 # Console Roulette DDD Implementation #
-This console roulette java implementation is meant to be Domain Driven Design demo to be able to capture main concepts and suggests implementation tricks and ideas based on [Vaughn Vernon's "red book"](http://www.amazon.co.uk/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577). There are some concepts I haven't touched in this demo but I am going to call your attention possible extentions points.
+This console roulette java implementation is meant to be Domain Driven Design demo to be able to capture main concepts and suggests implementation tricks and ideas based on [Vaughn Vernon's "red book"](http://www.infoq.com/articles/implmenting-domain-driven-design-vaughn-vernon). There are some concepts I haven't touched in this demo but I am going to call your attention possible extentions points.
 
 ## The Console Roulette ##
 Roulette is a popular casino game. The aim of the exercise is to create a DDD based command line multiplayer version of the game.
