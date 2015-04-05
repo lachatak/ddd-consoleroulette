@@ -65,9 +65,9 @@ Based on this description I have [3 driving adapters](src/main/java/org/kaloz/ro
 
 #### Driven adapters####
 An adapter can be regarded as a ***driven adapter*** if it is feed by the domain with information. Ultimately almost all driving adapter calls end up in the driven adapter layer.
-Based on this description I have [2 driven adapters](src/main/java/org/kaloz/roulette/infrastructure/adapters/driven):
+Based on this description I have [2 driven adapters](src/main/java/org/kaloz/roulette/infrastucture/adapters/driven):
 - console: the domain is using it to **print out bet results**. As a result we see the winners
-- persistence: application layer iss using it to **store domain state**. As a result we could persist domain objects
+- persistence: application layer is using it to **store domain state**. As a result we could persist domain objects
 
 ### Aggregates ###
 In this simple example I have 1 aggregate root. This is the [RouletteGame](src/main/java/org/kaloz/roulette/domain/RouletteGame.java). This is used to **provide roulette game specific behaviour**.
