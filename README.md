@@ -54,7 +54,7 @@ Tomas brought in total win 2.0 and total bet 1.0. She bet 3.0 on EVEN and won 6.
 I am going to go step by step and show each and every important DDD aspect based the "red book".
 
 ### Architecture ###
-The application's architecture follows the ***Hexagonal or Ports and Adapters*** structure. Using [Mate's rule](http://tindaloscode.blogspot.co.uk/2013/11/ddd-and-hexagonal-architecture.html) terminology for adapters to be able to meaningfully distinguish them.
+The application's architecture follows the ***Hexagonal or Ports and Adapters*** structure. I am using [Mate's terminology](http://tindaloscode.blogspot.co.uk/2013/11/ddd-and-hexagonal-architecture.html) for adapters to be able to meaningfully distinguish them.
 
 #### Driving adapters####
 An adapter can be regarded as a ***driving adapter*** if it feeds the domain with information which could cause a state change in the in it or simply just forces the domain to handle some stateless activity like a request.
