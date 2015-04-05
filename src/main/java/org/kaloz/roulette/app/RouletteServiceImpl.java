@@ -1,12 +1,12 @@
 package org.kaloz.roulette.app;
 
-import java.util.concurrent.locks.Lock;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.kaloz.roulette.app.lock.LockAction;
+import org.kaloz.roulette.app.lock.LockTemplate;
 import org.kaloz.roulette.domain.Croupier;
-import org.kaloz.roulette.domain.ResultBoard;
+import org.kaloz.roulette.domain.RouletteGame;
 import org.kaloz.roulette.domain.core.PlayerBet;
 import org.kaloz.roulette.domain.core.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
@@ -15,46 +15,44 @@ import org.kaloz.roulette.domain.core.Pocket;
 public class RouletteServiceImpl implements RouletteService {
 
     private final Croupier croupier;
-    private final ResultBoard resultBoard;
-    private final Lock lock;
+    private final LockTemplate lockTemplate;
 
     @Inject
-    public RouletteServiceImpl(final Croupier croupier, final ResultBoard resultBoard, final Lock lock) {
+    public RouletteServiceImpl(final Croupier croupier, final LockTemplate lockTemplate) {
         this.croupier = croupier;
-        this.resultBoard = resultBoard;
-        this.lock = lock;
+        this.lockTemplate = lockTemplate;
     }
 
     public void registerPlayer(final PlayerPosition playerPosition) {
 
-        new LockTemplate<Void>(lock) {
+        lockTemplate.perform(new LockAction<Void>() {
             @Override
-            public Void apply() {
-                croupier.registerPlayer(playerPosition);
+            protected Void apply(RouletteGame rouletteGame) {
+                croupier.registerPlayer(rouletteGame, playerPosition);
                 return null;
             }
-        }.perform();
+        });
     }
 
     public void placeBet(final PlayerBet playerBet) {
 
-        new LockTemplate<Void>(lock) {
+        lockTemplate.perform(new LockAction<Void>() {
             @Override
-            public Void apply() {
-                croupier.placeBet(playerBet);
+            protected Void apply(RouletteGame rouletteGame) {
+                croupier.placeBet(rouletteGame, playerBet);
                 return null;
             }
-        }.perform();
+        });
     }
 
     public void announceWinningPocket(final Pocket pocket) {
-        new LockTemplate<Void>(lock) {
+
+        lockTemplate.perform(new LockAction<Void>() {
             @Override
-            public Void apply() {
-                resultBoard.updateBetResults(pocket, croupier.announceWinningPocket(pocket));
-                resultBoard.updatePlayerPositions(croupier.playerPositions());
+            protected Void apply(RouletteGame rouletteGame) {
+                croupier.announceWinningPocket(rouletteGame, pocket);
                 return null;
             }
-        }.perform();
+        });
     }
 }

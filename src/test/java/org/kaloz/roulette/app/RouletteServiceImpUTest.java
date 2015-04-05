@@ -3,8 +3,6 @@ package org.kaloz.roulette.app;
 import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_BET_PLAYER1;
 import static org.kaloz.roulette.domain.core.TestFixtures.VALID_POCKET_1;
 import static org.kaloz.roulette.domain.core.TestFixtures.VALID_ZERO_PLAYER_POSITION_PLAYER1;
-import static org.mockito.Matchers.anyList;
-import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -14,9 +12,10 @@ import java.util.concurrent.locks.Lock;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.kaloz.roulette.app.lock.LockTemplate;
 import org.kaloz.roulette.domain.Croupier;
-import org.kaloz.roulette.domain.ResultBoard;
-import org.mockito.InjectMocks;
+import org.kaloz.roulette.domain.RouletteGame;
+import org.kaloz.roulette.domain.RouletteGameRepository;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -24,20 +23,27 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class RouletteServiceImpUTest {
 
     @Mock
-    private Croupier croupier;
+    private RouletteGameRepository rouletteGameRepository;
 
     @Mock
-    private ResultBoard resultBoard;
+    private Croupier croupier;
 
     @Mock
     private Lock lock;
 
-    @InjectMocks
+    @Mock
+    private RouletteGame rouletteGame;
+
     private RouletteServiceImpl testObj;
 
     @Before
     public void before() throws InterruptedException {
+        when(rouletteGameRepository.load()).thenReturn(rouletteGame);
         when(lock.tryLock(2000, TimeUnit.MILLISECONDS)).thenReturn(true);
+
+        LockTemplate lockTemplate = new LockTemplate(rouletteGameRepository, lock);
+        testObj = new RouletteServiceImpl(croupier, lockTemplate);
+
     }
 
     @Test
@@ -46,7 +52,7 @@ public class RouletteServiceImpUTest {
         testObj.registerPlayer(VALID_ZERO_PLAYER_POSITION_PLAYER1);
 
         // assert
-        verify(croupier).registerPlayer(VALID_ZERO_PLAYER_POSITION_PLAYER1);
+        verify(croupier).registerPlayer(rouletteGame, VALID_ZERO_PLAYER_POSITION_PLAYER1);
     }
 
     @Test
@@ -55,7 +61,7 @@ public class RouletteServiceImpUTest {
         testObj.placeBet(VALID_PLAYER_BET_PLAYER1);
 
         // assert
-        verify(croupier).placeBet(VALID_PLAYER_BET_PLAYER1);
+        verify(croupier).placeBet(rouletteGame, VALID_PLAYER_BET_PLAYER1);
     }
 
     @Test
@@ -64,9 +70,6 @@ public class RouletteServiceImpUTest {
         testObj.announceWinningPocket(VALID_POCKET_1);
 
         // assert
-        verify(croupier).announceWinningPocket(VALID_POCKET_1);
-        verify(croupier).playerPositions();
-        verify(resultBoard).updateBetResults(eq(VALID_POCKET_1), anyList());
-        verify(resultBoard).updatePlayerPositions(anyList());
+        verify(croupier).announceWinningPocket(rouletteGame, VALID_POCKET_1);
     }
 }
