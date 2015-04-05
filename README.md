@@ -58,7 +58,7 @@ The application's architecture follows the ***Hexagonal or Ports and Adapters***
 
 #### Driving adapters####
 An adapter can be regarded as a ***driving adapter*** if it feeds the domain with information which could cause a state change in the in it or simply just forces the domain to handle some stateless activity like a request.
-Based on this description I have [3 driving adapters](src/main/java/org/kaloz/roulette/infrastructure/adapters/driving):
+Based on this description I have [3 driving adapters](src/main/java/org/kaloz/roulette/infrastucture/adapters/driving):
 - loader: it **initialises the application** when it starts. It loads the given **player.txt** and creates players
 - console: it **manages user input** and delegates input to the domain. As a result the player can bet
 - scheduled: it **announces the winning number** in scheduled fashion. As a result we have process player bets
@@ -99,6 +99,12 @@ I haven't touched the following topics in this demo:
 - Domain, subdomain, bounded context. As it is a really simple example the entire application is implemented in one bounded-context.
 - Context mapping
 - Entities
-- Domain events. One of the most exciting area. Its is quite of complex to do it properly but there are nice solutions [out there](https://github.com/matemagyari/reference-ddd-blackjack).
+- Domain events. One of the most exciting area. Its is quite of complex to do it properly but there are nice solutions [out there](https://github.com/matemagyari/reference-ddd-blackjack). Possible future improvements.
 - Integrating bounded contexts
-- Event Sourcing. It has really big potential. Recently I have seen some interesting solutions based on akka and ES.
+- Event Sourcing.
+
+## Other technical details ###
+- java 7 complient (why not java8? I rather use scala than java8). try-with-resource, type inference for collections, executors, locks
+- spring java config
+- >90% code coverage
+- It hasn't got any integration tests just unit tests. Future improvements
