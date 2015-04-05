@@ -71,10 +71,10 @@ Based on this description I have [3 driving adapters](src/main/java/org/kaloz/ro
 In this simple example I have 1 aggregate root. This is the [RouletteGame](src/main/java/org/kaloz/roulette/domain/RouletteGame.java). This is used to **provide roulette game specific behaviour**.
 
 ### Value Object ###
-In domain level I used [VALJO](http://waytothepiratecove.blogspot.co.uk/2015/04/valjos-value-java-object.html). They **encapsulate their own validation and creation factory methods**. They are very convenient and properly express the fact that they are ***immutable***.
+In domain level I used [VALJO](http://waytothepiratecove.blogspot.co.uk/2015/04/valjos-value-java-object.html). They **encapsulate their own validation and creation factory methods**. They are very convenient and properly express the fact that they are **immutable**.
 
 ### Services ###
-I have one stateless service [Croupier](src/main/java/org/kaloz/roulette/domain/Croupier.java) which **handles the game flow and organises the game itself**. He register a player, check player pets and announces the results.
+I have one stateless domain service [Croupier](src/main/java/org/kaloz/roulette/domain/Croupier.java) which **handles the game flow and organises the game itself**. He register a player, check player pets and announces the results.
 
 ### Modules ###
 There are couple of simple modules in the domain. As the application very simple the solution is not overcomplicated either. The main organising concept is **not to have circular dependencies**.
@@ -83,7 +83,7 @@ There are couple of simple modules in the domain. As the application very simple
 There are many example for this DDD principle in this example. Almost everything is created via factories.
 
 ### Anti-corruption Layer - ACL ###
-ACLs main responsibility to **protect the domain from adapter layer changes. That is why ACL lays between every adapter and the domain regardless of being a driven or driving. If any change happens in the messaging or persistence layer ACL could potentially protect the domain to leak this modification to it.
+ACLs main responsibility to **protect the domain from adapter layer changes**. That is why ACL lays between every adapter and the domain regardless of being a driven or driving. If any change happens in the messaging or persistence layer ACL could potentially protect the domain to leak this modification to it.
 
 ### Repositories ###
 For the RouletteGame aggregate root there is a repository called [RouletteGameRepository](src/main/java/org/kaloz/roulette/domain/RouletteGameRepository.java). It is **part of the domain but the implemented in the infrastructure driven adapter layer**.
