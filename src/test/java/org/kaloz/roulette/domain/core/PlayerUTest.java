@@ -3,8 +3,8 @@ package org.kaloz.roulette.domain.core;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.kaloz.roulette.domain.core.Player.player;
-import static org.kaloz.roulette.domain.core.TestFixtures.EMPTY_PLAYER_NAME;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_NAME_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.EMPTY_PLAYER_NAME;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_NAME_PLAYER1;
 
 import org.junit.Test;
 

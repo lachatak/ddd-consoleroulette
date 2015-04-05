@@ -1,4 +1,4 @@
-package org.kaloz.roulette.domain.core.field;
+package org.kaloz.roulette.domain.core.bet.field;
 
 import org.apache.commons.lang3.Validate;
 

@@ -1,4 +1,4 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.position;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

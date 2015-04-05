@@ -4,8 +4,8 @@ import java.io.PrintStream;
 import java.util.List;
 
 import org.kaloz.roulette.domain.ResultBoard;
-import org.kaloz.roulette.domain.core.BetResult;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.result.BetResult;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
 import org.kaloz.roulette.infrastucture.adapters.driven.console.assembler.ConsoleResultBoardAssembler;
 

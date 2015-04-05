@@ -1,19 +1,20 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.bet;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
-import static org.kaloz.roulette.domain.core.Bet.bet;
-import static org.kaloz.roulette.domain.core.field.EvenField.evenField;
-import static org.kaloz.roulette.domain.core.field.NumberField.numberField;
-import static org.kaloz.roulette.domain.core.field.OddField.oddField;
+import static org.kaloz.roulette.domain.core.bet.Bet.bet;
+import static org.kaloz.roulette.domain.core.bet.field.EvenField.evenField;
+import static org.kaloz.roulette.domain.core.bet.field.NumberField.numberField;
+import static org.kaloz.roulette.domain.core.bet.field.OddField.oddField;
 
 import java.math.BigDecimal;
 
 import org.junit.Test;
-import org.kaloz.roulette.domain.core.field.EvenField;
-import org.kaloz.roulette.domain.core.field.NumberField;
-import org.kaloz.roulette.domain.core.field.OddField;
+import org.kaloz.roulette.domain.core.bet.Bet;
+import org.kaloz.roulette.domain.core.bet.field.EvenField;
+import org.kaloz.roulette.domain.core.bet.field.NumberField;
+import org.kaloz.roulette.domain.core.bet.field.OddField;
 
 public class BetUTest {
 

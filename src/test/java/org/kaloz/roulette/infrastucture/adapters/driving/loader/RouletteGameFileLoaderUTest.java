@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
 import org.kaloz.roulette.app.RouletteService;
 import org.kaloz.roulette.domain.RouletteGame;
 import org.kaloz.roulette.domain.RouletteGameRepository;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.infrastucture.adapters.driving.console.ConsolePlayerBetReader;
 import org.kaloz.roulette.infrastucture.adapters.driving.loader.assembler.PlayerPositionAssembler;
 import org.kaloz.roulette.infrastucture.adapters.driving.scheduled.WinningPocketAnnouncementScheduler;

@@ -1,13 +1,13 @@
 package org.kaloz.roulette.infrastucture.adapters.driving.console.assembler;
 
-import static org.kaloz.roulette.domain.core.Bet.bet;
+import static org.kaloz.roulette.domain.core.bet.Bet.bet;
 import static org.kaloz.roulette.domain.core.Player.player;
-import static org.kaloz.roulette.domain.core.PlayerBet.playerBet;
+import static org.kaloz.roulette.domain.core.bet.PlayerBet.playerBet;
 
 import javax.inject.Named;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.PlayerBet;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
 
 @Named
 public class PlayerBetAssembler {

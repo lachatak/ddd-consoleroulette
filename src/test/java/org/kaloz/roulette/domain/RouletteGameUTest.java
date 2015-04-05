@@ -4,18 +4,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_BET_RESULT_PLAYER1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_BET_PLAYER1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_POSITION_PLAYER1_WIN;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_POCKET_1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_ZERO_PLAYER_POSITION_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_BET_RESULT_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_BET_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_POSITION_PLAYER1_WIN;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_POCKET_1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_ZERO_PLAYER_POSITION_PLAYER1;
 
 import java.util.List;
 
 import org.junit.Test;
-import org.kaloz.roulette.domain.core.BetResult;
-import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.result.BetResult;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 
 public class RouletteGameUTest {
 

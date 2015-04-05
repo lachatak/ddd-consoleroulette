@@ -1,10 +1,11 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.bet;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import org.apache.commons.lang3.Validate;
+import org.kaloz.roulette.domain.core.Player;
 
 @Data
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

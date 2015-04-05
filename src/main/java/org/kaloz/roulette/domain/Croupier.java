@@ -8,9 +8,9 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.BetResult;
-import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.result.BetResult;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
 
 @Named

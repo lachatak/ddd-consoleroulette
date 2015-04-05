@@ -1,10 +1,10 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.bet;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.kaloz.roulette.domain.core.PlayerBet.playerBet;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_BET_1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER1;
+import static org.kaloz.roulette.domain.core.bet.PlayerBet.playerBet;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_BET_1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER1;
 
 import org.junit.Test;
 

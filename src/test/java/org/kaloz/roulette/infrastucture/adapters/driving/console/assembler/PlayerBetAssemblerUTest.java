@@ -2,12 +2,12 @@ package org.kaloz.roulette.infrastucture.adapters.driving.console.assembler;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.kaloz.roulette.domain.core.TestFixtures.INVALID_PLAYER_INPUT;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_BET_PLAYER1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_INPUT;
+import static org.kaloz.roulette.domain.TestFixtures.INVALID_PLAYER_INPUT;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_BET_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_INPUT;
 
 import org.junit.Test;
-import org.kaloz.roulette.domain.core.PlayerBet;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
 
 public class PlayerBetAssemblerUTest {
 

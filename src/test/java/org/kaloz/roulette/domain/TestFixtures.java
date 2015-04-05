@@ -1,10 +1,10 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain;
 
-import static org.kaloz.roulette.domain.core.Bet.bet;
-import static org.kaloz.roulette.domain.core.BetResult.betResult;
+import static org.kaloz.roulette.domain.core.bet.Bet.bet;
+import static org.kaloz.roulette.domain.core.result.BetResult.betResult;
 import static org.kaloz.roulette.domain.core.Player.player;
-import static org.kaloz.roulette.domain.core.PlayerBet.playerBet;
-import static org.kaloz.roulette.domain.core.PlayerPosition.playerPosition;
+import static org.kaloz.roulette.domain.core.bet.PlayerBet.playerBet;
+import static org.kaloz.roulette.domain.core.position.PlayerPosition.playerPosition;
 import static org.kaloz.roulette.domain.core.Pocket.pocket;
 import static org.kaloz.roulette.domain.core.RouletteGameId.rouletteGameId;
 
@@ -13,6 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.kaloz.roulette.domain.RouletteGame;
+import org.kaloz.roulette.domain.core.Player;
+import org.kaloz.roulette.domain.core.Pocket;
+import org.kaloz.roulette.domain.core.RouletteGameId;
+import org.kaloz.roulette.domain.core.bet.Bet;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
+import org.kaloz.roulette.domain.core.result.BetResult;
 import org.kaloz.roulette.infrastucture.adapters.driven.persistence.data.PersistenceRouletteGame;
 
 import com.google.common.collect.Lists;

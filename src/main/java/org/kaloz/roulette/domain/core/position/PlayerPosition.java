@@ -1,7 +1,7 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.position;
 
-import static org.kaloz.roulette.domain.core.TotalBet.totalBet;
-import static org.kaloz.roulette.domain.core.TotalWin.totalWin;
+import static org.kaloz.roulette.domain.core.position.TotalBet.totalBet;
+import static org.kaloz.roulette.domain.core.position.TotalWin.totalWin;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +9,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 import org.apache.commons.lang3.Validate;
+import org.kaloz.roulette.domain.core.Player;
 
 @Data
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

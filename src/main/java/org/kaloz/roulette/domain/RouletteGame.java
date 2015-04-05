@@ -1,7 +1,7 @@
 package org.kaloz.roulette.domain;
 
 import static com.google.common.collect.Iterables.concat;
-import static org.kaloz.roulette.domain.core.BetResult.betResult;
+import static org.kaloz.roulette.domain.core.result.BetResult.betResult;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -9,10 +9,10 @@ import lombok.ToString;
 import java.util.List;
 import java.util.Map;
 
-import org.kaloz.roulette.domain.core.BetResult;
+import org.kaloz.roulette.domain.core.result.BetResult;
 import org.kaloz.roulette.domain.core.Player;
-import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
 import org.kaloz.roulette.domain.core.RouletteGameId;
 

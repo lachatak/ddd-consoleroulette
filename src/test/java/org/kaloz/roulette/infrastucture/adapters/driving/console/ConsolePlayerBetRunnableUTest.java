@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kaloz.roulette.app.RouletteService;
-import org.kaloz.roulette.domain.core.PlayerBet;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
 import org.kaloz.roulette.infrastucture.adapters.driving.console.assembler.PlayerBetAssembler;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;

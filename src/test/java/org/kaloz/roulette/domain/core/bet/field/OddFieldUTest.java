@@ -1,11 +1,11 @@
-package org.kaloz.roulette.domain.core.field;
+package org.kaloz.roulette.domain.core.bet.field;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.collection.IsIterableContainingInOrder.contains;
 import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_MULTIPLIER_2;
-import static org.kaloz.roulette.domain.core.field.OddField.oddField;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_MULTIPLIER_2;
+import static org.kaloz.roulette.domain.core.bet.field.OddField.oddField;
 
 import java.math.BigDecimal;
 

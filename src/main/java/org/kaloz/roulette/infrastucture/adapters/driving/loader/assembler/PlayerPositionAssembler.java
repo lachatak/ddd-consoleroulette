@@ -1,14 +1,14 @@
 package org.kaloz.roulette.infrastucture.adapters.driving.loader.assembler;
 
 import static org.kaloz.roulette.domain.core.Player.player;
-import static org.kaloz.roulette.domain.core.PlayerPosition.playerPosition;
+import static org.kaloz.roulette.domain.core.position.PlayerPosition.playerPosition;
 
 import java.math.BigDecimal;
 
 import javax.inject.Named;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 
 @Named
 public class PlayerPositionAssembler {

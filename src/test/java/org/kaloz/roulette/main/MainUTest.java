@@ -2,7 +2,7 @@ package org.kaloz.roulette.main;
 
 import org.junit.Test;
 
-public class MainITest {
+public class MainUTest {
 
     @Test(timeout = 10000)
     public void testRun() throws Exception {

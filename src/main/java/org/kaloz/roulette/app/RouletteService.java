@@ -1,7 +1,7 @@
 package org.kaloz.roulette.app;
 
-import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
 
 public interface RouletteService {

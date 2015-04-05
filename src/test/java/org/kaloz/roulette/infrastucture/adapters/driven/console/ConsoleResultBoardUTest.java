@@ -1,8 +1,8 @@
 package org.kaloz.roulette.infrastucture.adapters.driven.console;
 
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_BET_RESULTS_PLAYER1_LIST;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_POSITION_LIST_PLAYER1_WIN;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_POCKET_1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_BET_RESULTS_PLAYER1_LIST;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_POSITION_LIST_PLAYER1_WIN;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_POCKET_1;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 

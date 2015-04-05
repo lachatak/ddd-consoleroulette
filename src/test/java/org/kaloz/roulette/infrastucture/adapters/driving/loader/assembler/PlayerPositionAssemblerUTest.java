@@ -2,14 +2,14 @@ package org.kaloz.roulette.infrastucture.adapters.driving.loader.assembler;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.kaloz.roulette.domain.core.TestFixtures.INVALID_LOAD_INPUT_AMOUNT;
-import static org.kaloz.roulette.domain.core.TestFixtures.INVALID_LOAD_INPUT_FIELD;
-import static org.kaloz.roulette.domain.core.TestFixtures.INVALID_LOAD_INPUT_LESS_FIELDS;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_LOAD_INPUT;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_ZERO_PLAYER_POSITION_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.INVALID_LOAD_INPUT_AMOUNT;
+import static org.kaloz.roulette.domain.TestFixtures.INVALID_LOAD_INPUT_FIELD;
+import static org.kaloz.roulette.domain.TestFixtures.INVALID_LOAD_INPUT_LESS_FIELDS;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_LOAD_INPUT;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_ZERO_PLAYER_POSITION_PLAYER1;
 
 import org.junit.Test;
-import org.kaloz.roulette.domain.core.PlayerPosition;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 
 public class PlayerPositionAssemblerUTest {
 

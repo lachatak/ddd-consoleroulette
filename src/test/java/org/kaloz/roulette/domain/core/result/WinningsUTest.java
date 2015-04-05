@@ -1,9 +1,9 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.result;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.closeTo;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_WINNINGS_2;
-import static org.kaloz.roulette.domain.core.Winnings.winnings;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_WINNINGS_2;
+import static org.kaloz.roulette.domain.core.result.Winnings.winnings;
 
 import java.math.BigDecimal;
 

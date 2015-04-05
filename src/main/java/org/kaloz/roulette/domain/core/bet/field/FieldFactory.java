@@ -1,8 +1,8 @@
-package org.kaloz.roulette.domain.core.field;
+package org.kaloz.roulette.domain.core.bet.field;
 
-import static org.kaloz.roulette.domain.core.field.EvenField.evenField;
-import static org.kaloz.roulette.domain.core.field.NumberField.numberField;
-import static org.kaloz.roulette.domain.core.field.OddField.oddField;
+import static org.kaloz.roulette.domain.core.bet.field.EvenField.evenField;
+import static org.kaloz.roulette.domain.core.bet.field.NumberField.numberField;
+import static org.kaloz.roulette.domain.core.bet.field.OddField.oddField;
 
 import org.apache.commons.lang3.Validate;
 

@@ -1,12 +1,12 @@
-package org.kaloz.roulette.domain.core;
+package org.kaloz.roulette.domain.core.result;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static org.kaloz.roulette.domain.core.BetResult.betResult;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_PLAYER_BET_PLAYER1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_POCKET_1;
-import static org.kaloz.roulette.domain.core.TestFixtures.VALID_POCKET_10;
-import static org.kaloz.roulette.domain.core.Winnings.winnings;
+import static org.kaloz.roulette.domain.core.result.BetResult.betResult;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_BET_PLAYER1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_POCKET_1;
+import static org.kaloz.roulette.domain.TestFixtures.VALID_POCKET_10;
+import static org.kaloz.roulette.domain.core.result.Winnings.winnings;
 
 import java.math.BigDecimal;
 
