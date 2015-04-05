@@ -55,15 +55,17 @@ I am going to go step by step and show each and every important DDD aspect based
 
 ### Architecture ###
 The application's architecture follows the ***Hexagonal or Ports and Adapters*** structure. Using [Mate's rule](http://tindaloscode.blogspot.co.uk/2013/11/ddd-and-hexagonal-architecture.html) terminology for adapters to be able to meaningfully distinguish them.
-####Driving adapters####
+
+#### Driving adapters####
 An adapter can be regarded as a ***driving adapter*** if it feeds the domain with information which could cause a state change in the in it or simply just forces the domain to handle some stateless activity like a request.
 Based on this description I have [3 driving adapters](src/main/java/org/kaloz/roulette/infrastructure/adapters/driving):
 - loader: it **initialises the application** when it starts. It loads the given **player.txt** and creates players
 - console: it **manages user input** and delegates input to the domain. As a result the player can bet
 - scheduled: it **announces the winning number** in scheduled fashion. As a result we have process player bets
-####Driven adapters####
+
+#### Driven adapters####
 An adapter can be regarded as a ***driven adapter*** if it is feed by the domain with information. Ultimately almost all driving adapter calls end up in the driven adapter layer.
-Based on this description I have [3 driving adapters](src/main/java/org/kaloz/roulette/infrastructure/adapters/driven):
+Based on this description I have [2 driven adapters](src/main/java/org/kaloz/roulette/infrastructure/adapters/driven):
 - console: the domain is using it to **print out bet results**. As a result we see the winners
 - persistence: application layer iss using it to **store domain state**. As a result we could persist domain objects
 
