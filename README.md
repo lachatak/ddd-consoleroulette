@@ -9,7 +9,7 @@ On start-up, load a file which contains a list of player's names:
 Robert
 Tomas
 ```
-Once started, it should read lines from the console, each line will contain the player's name, what they want to bet on (either a number from 1-36, EVEN or ODD), and how much they want to bet:
+Once started, it should read lines from the console, each line will contain the player's name, what they want to bet on (either a number from 1-36, EVEN or ODD), and how much they want to bet.
 ###Console input ###
 ```
 Robert 2 1.0
@@ -22,14 +22,14 @@ Every 30 seconds the game should choose a random number between 0 and 36 (inclus
 - If the number is odd, any bet on ODD wins, and the player wins 2x the bet's amount.
 - All other bets lose.
 It must be possible to place bets and choose a random number concurrently.
-The game should print to the console the number and for each bet - the player's name, the bet, whether they won or lost, and how much they won:
+The game should print to the console the number and for each bet - the player's name, the bet, whether they won or lost, and how much they won.
 ###Output 1###
 ```
 Number: 4
-Player       Bet   Outcome  Winnings
+Player       Bet     Outcome    Winnings
 ---
-Robert       2     LOSE       0.0
-Tomas        EVEN      WIN       6.0
+Robert       2       LOSE       0.0
+Tomas        EVEN    WIN        6.0
 ```
 ###Optional Bonus Question###
 We'd like to print out the total amount a player has won and bet. The input file (with players' names) should have optional "total win" and "total bet" comma separated values which are the amounts player has won and bet in the past. No value should be treated as zero.
