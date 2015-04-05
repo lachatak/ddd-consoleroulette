@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.kaloz</groupId>
-    <artifactId>roulette</artifactId>
+    <artifactId>consoleroulette</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
