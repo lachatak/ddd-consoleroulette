@@ -2,7 +2,7 @@ package org.kaloz.roulette.infrastucture.adapters.driven.persistence.assembler;
 
 import static org.kaloz.roulette.domain.core.bet.Bet.bet;
 import static org.kaloz.roulette.domain.core.Player.player;
-import static org.kaloz.roulette.domain.core.bet.PlayerBet.playerBet;
+import static org.kaloz.roulette.domain.core.PlayerBet.playerBet;
 import static org.kaloz.roulette.domain.core.position.PlayerPosition.playerPosition;
 import static org.kaloz.roulette.domain.core.RouletteGameId.rouletteGameId;
 
@@ -15,7 +15,7 @@ import javax.inject.Named;
 
 import org.kaloz.roulette.domain.RouletteGame;
 import org.kaloz.roulette.domain.core.Player;
-import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.PlayerBet;
 import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.infrastucture.adapters.driven.persistence.data.PersistenceRouletteGame;
 

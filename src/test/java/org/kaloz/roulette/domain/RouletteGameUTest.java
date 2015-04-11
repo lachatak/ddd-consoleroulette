@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.kaloz.roulette.domain.core.result.BetResult;
-import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.PlayerBet;
 import org.kaloz.roulette.domain.core.position.PlayerPosition;
 
 public class RouletteGameUTest {

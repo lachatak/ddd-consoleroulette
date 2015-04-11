@@ -229,7 +229,7 @@
                                 </barrier>
                                 <barrier>
                                     <layer>domain</layer>
-                                    <components>org.apache.commons.lang3,com.google.common.collect,org.slf4j</components>
+                                    <components>org.apache.commons.lang3,com.google.common.collect,org.slf4j,lombok</components>
                                 </barrier>
                             </barriers>
                             <violationsThreshold>3</violationsThreshold>
@@ -252,10 +252,6 @@
                                 <cohesiveGroupsDiscovery />
                             </grouping>
                         </packageCoupling>
-                        <!--<submodulesBlueprint>-->
-                            <!--<location>src/main/resources/roulette_blueprint.yaml</location>-->
-                            <!--<violationsThreshold>0</violationsThreshold>-->
-                        <!--</submodulesBlueprint>-->
                     </checks>
                 </configuration>
                 <executions>

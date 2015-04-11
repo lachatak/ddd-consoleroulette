@@ -10,7 +10,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.PlayerBet;
 import org.kaloz.roulette.domain.core.Pocket;
 import org.kaloz.roulette.domain.core.bet.field.Field;
 

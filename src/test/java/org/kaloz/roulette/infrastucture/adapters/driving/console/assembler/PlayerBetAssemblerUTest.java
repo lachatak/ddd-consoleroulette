@@ -7,7 +7,7 @@ import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_BET_PLAYER1;
 import static org.kaloz.roulette.domain.TestFixtures.VALID_PLAYER_INPUT;
 
 import org.junit.Test;
-import org.kaloz.roulette.domain.core.bet.PlayerBet;
+import org.kaloz.roulette.domain.core.PlayerBet;
 
 public class PlayerBetAssemblerUTest {
 
