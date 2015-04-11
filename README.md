@@ -90,6 +90,7 @@ ACLs main responsibility to **protect the domain from adapter layer changes**. T
 ### Repositories ###
 For the RouletteGame aggregate root there is a repository called [RouletteGameRepository](src/main/java/org/kaloz/roulette/domain/RouletteGameRepository.java). It is **part of the domain but the implemented in the infrastructure driven adapter layer**.
 It could be used together with a **different store solution**. The store itself encapsulates a specific type of the persistence. It could be SQL, NoSQL, file or memory and so on. I have chosen a memory based solution but I store the aggregate in a unique string list form to show the concept. An **ACL stays between the repository and the store** to protect the domain from any persistence change.
+As my simple solution always has only 1 game at the time the repository don't have **findById** method just a **load** but still shows the essence of the concept.  
 
 ### Application ###
 The application layer provides functionality for **finding, updating aggregate root from the repository**, **manages transactions** or in extreme case **locking**. It could **orchestrate results** from different domain calls. I use my [RouletteGameService](src/main/java/org/kaloz/roulette/app/RouletteServiceImpl.java) to load, update the RouletteGame aggregate root and handles locking as well.
