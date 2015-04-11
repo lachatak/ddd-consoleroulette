@@ -79,7 +79,7 @@ In domain level I used [VALJO](http://waytothepiratecove.blogspot.co.uk/2015/04/
 I have one stateless domain service [Croupier](src/main/java/org/kaloz/roulette/domain/Croupier.java) which **handles the game flow and organises the game itself**. He register a player, check player pets and announces the results.
 
 ### Modules ###
-There are couple of simple modules in the domain. As the application very simple the solution is not overcomplicated either. The main organising concept is **not to have circular dependencies**.
+There are couple of simple modules in the domain. As the application very simple the solution is not overcomplicated either. The main organising concept is **not to have circular dependencies**. To make sure that this rule holds I am using [JPrinciple](https://github.com/matemagyari/principle/wiki/JPrinciple). It verifies the project in compile time and forces the build to fail if any preconfigured threshold is exceeded.
 
 ### Factories ###
 There are many example for this DDD principle in this example. Almost everything is created via factories.
