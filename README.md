@@ -107,4 +107,5 @@ I haven't touched the following topics in this demo:
 - java 7 complient (why not java8? I rather use scala than java8). try-with-resource, type inference for collections, executors, locks
 - spring java config
 - >90% code coverage
+- Strictly constructor dependency injection
 - It hasn't got any integration tests just unit tests. Future improvements
