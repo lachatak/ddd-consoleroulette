@@ -100,7 +100,7 @@ I haven't touched the following topics in this demo:
 - Domain, subdomain, bounded context. As it is a really simple example the entire application is implemented in one bounded-context.
 - Context mapping
 - Entities
-- Domain events. One of the most exciting area. Its is quite of complex to do it properly but there are nice solutions [out there](https://github.com/matemagyari/reference-ddd-blackjack). Possible future improvements.
+- Domain events. One of the most exciting area. Its is quite of complex to do it properly but there are nice solutions out there like [Mate's blackjack](https://github.com/matemagyari/reference-ddd-blackjack). Possible future improvements.
 - Integrating bounded contexts
 - Event Sourcing.
 
