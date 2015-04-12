@@ -110,3 +110,7 @@ I haven't touched the following topics in this demo:
 - >90% code coverage
 - Strictly constructor dependency injection
 - It hasn't got any integration tests just unit tests. Future improvements
+
+## How to run ##
+- mvn clean install
+- java -jar target/consoleroulette-1.0.0-SNAPSHOT.jar
