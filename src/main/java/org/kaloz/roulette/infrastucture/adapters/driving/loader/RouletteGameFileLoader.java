@@ -22,19 +22,14 @@ import org.kaloz.roulette.infrastucture.adapters.driving.scheduled.WinningPocket
 @Slf4j
 public class RouletteGameFileLoader {
 
-    private final ConsolePlayerBetReader consolePlayerBetReader;
-    private final WinningPocketAnnouncementScheduler winningPocketAnnouncementScheduler;
     private final RouletteService rouletteService;
     private final RouletteGameRepository rouletteGameRepository;
     private final PlayerPositionAssembler playerPositionAssembler;
     private final InputStream playerFileInputStream;
 
     @Inject
-    public RouletteGameFileLoader(final ConsolePlayerBetReader consolePlayerBetReader, final WinningPocketAnnouncementScheduler winningPocketAnnouncementScheduler,
-            final RouletteService rouletteService, final RouletteGameRepository rouletteGameRepository, final PlayerPositionAssembler playerPositionAssembler,
+    public RouletteGameFileLoader(final RouletteService rouletteService, final RouletteGameRepository rouletteGameRepository, final PlayerPositionAssembler playerPositionAssembler,
             final InputStream playerFileInputStream) {
-        this.consolePlayerBetReader = consolePlayerBetReader;
-        this.winningPocketAnnouncementScheduler = winningPocketAnnouncementScheduler;
         this.rouletteService = rouletteService;
         this.rouletteGameRepository = rouletteGameRepository;
         this.playerPositionAssembler = playerPositionAssembler;
@@ -46,7 +41,6 @@ public class RouletteGameFileLoader {
         try {
             initialiseStore();
             loadConfiguration();
-            startRouletteGame();
         } catch (Exception e) {
             log.error("Cannot start application!", e);
         }
@@ -54,13 +48,8 @@ public class RouletteGameFileLoader {
 
     private RouletteGameId initialiseStore() {
         RouletteGameId rouletteGameId = rouletteGameRepository.store(new RouletteGame());
-        log.info("Game with {} is initialised!");
+        log.info("Game with {} is initialised!", rouletteGameId);
         return rouletteGameId;
-    }
-
-    private void startRouletteGame() {
-        consolePlayerBetReader.readUserInput();
-        winningPocketAnnouncementScheduler.scheduleAnnouncement();
     }
 
     private void loadConfiguration() throws IOException {

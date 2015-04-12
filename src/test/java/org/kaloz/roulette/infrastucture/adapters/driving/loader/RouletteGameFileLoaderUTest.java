@@ -27,12 +27,6 @@ public class RouletteGameFileLoaderUTest {
     private static final String FILE_INPUT = "first line\nsecond line";
 
     @Mock
-    private ConsolePlayerBetReader consolePlayerBetReader;
-
-    @Mock
-    private WinningPocketAnnouncementScheduler winningPocketAnnouncementScheduler;
-
-    @Mock
     private RouletteService rouletteService;
 
     @Mock
@@ -48,7 +42,7 @@ public class RouletteGameFileLoaderUTest {
     @Before
     public void before() {
         playerFileInputStream = IOUtils.toInputStream(FILE_INPUT);
-        testObj = new RouletteGameFileLoader(consolePlayerBetReader, winningPocketAnnouncementScheduler, rouletteService, rouletteGameRepository, playerPositionAssembler, playerFileInputStream);
+        testObj = new RouletteGameFileLoader(rouletteService, rouletteGameRepository, playerPositionAssembler, playerFileInputStream);
     }
 
     @Test
@@ -60,7 +54,5 @@ public class RouletteGameFileLoaderUTest {
         verify(rouletteGameRepository).store(any(RouletteGame.class));
         verify(rouletteService, times(2)).registerPlayer(any(PlayerPosition.class));
         verify(playerPositionAssembler, times(2)).assemble(anyString());
-        verify(consolePlayerBetReader).readUserInput();
-        verify(winningPocketAnnouncementScheduler).scheduleAnnouncement();
     }
 }
