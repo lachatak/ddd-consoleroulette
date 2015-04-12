@@ -45,7 +45,7 @@ public class RouletteGameRepositoryImpl implements RouletteGameRepository {
             log.debug("{} has been loaded!", rouletteGame);
             return rouletteGame;
         } else {
-            throw new RouletteGameNotFoundException("Roulette game not found!!");
+            throw new RouletteGameNotFoundException();
         }
     }
 

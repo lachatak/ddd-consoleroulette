@@ -2,7 +2,9 @@ package org.kaloz.roulette.domain.exception;
 
 public class RouletteGameNotFoundException extends RuntimeException {
 
-    public RouletteGameNotFoundException(final String message) {
-        super(message);
+    private static final String MESSAGE = "Roulette game not found!!";
+
+    public RouletteGameNotFoundException() {
+        super(MESSAGE);
     }
 }

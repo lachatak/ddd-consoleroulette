@@ -8,10 +8,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.result.BetResult;
 import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
+import org.kaloz.roulette.domain.core.result.BetResult;
 import org.kaloz.roulette.domain.exception.PlayerNotRegisteredException;
 
 @Named
@@ -41,7 +41,7 @@ public class Croupier {
         log.info("Place bet {}", playerBet);
 
         if (!rouletteGame.containsPlayers(playerBet.getPlayer())) {
-            throw new PlayerNotRegisteredException(String.format("%s is not registered for this game!", playerBet.getPlayer()));
+            throw new PlayerNotRegisteredException(playerBet.getPlayer());
         }
 
         rouletteGame.placeBet(playerBet);

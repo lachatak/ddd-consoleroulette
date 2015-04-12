@@ -1,8 +1,12 @@
 package org.kaloz.roulette.domain.exception;
 
+import org.kaloz.roulette.domain.core.Player;
+
 public class PlayerNotRegisteredException extends RuntimeException {
 
-    public PlayerNotRegisteredException(final String message) {
-        super(message);
+    private static final String MESSAGE = "%s is not registered for this game!";
+
+    public PlayerNotRegisteredException(final Player player) {
+        super(String.format(MESSAGE, player));
     }
 }
