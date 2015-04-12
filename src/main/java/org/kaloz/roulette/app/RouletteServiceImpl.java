@@ -3,13 +3,13 @@ package org.kaloz.roulette.app;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.kaloz.roulette.app.lock.LockAction;
 import org.kaloz.roulette.app.lock.LockTemplate;
+import org.kaloz.roulette.app.lock.VoidLockAction;
 import org.kaloz.roulette.domain.Croupier;
 import org.kaloz.roulette.domain.RouletteGame;
 import org.kaloz.roulette.domain.core.PlayerBet;
-import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
+import org.kaloz.roulette.domain.core.position.PlayerPosition;
 
 @Named
 public class RouletteServiceImpl implements RouletteService {
@@ -25,33 +25,30 @@ public class RouletteServiceImpl implements RouletteService {
 
     public void registerPlayer(final PlayerPosition playerPosition) {
 
-        lockTemplate.perform(new LockAction<Void>() {
+        lockTemplate.performVoid(new VoidLockAction() {
             @Override
-            protected Void apply(RouletteGame rouletteGame) {
+            protected void apply(RouletteGame rouletteGame) {
                 croupier.registerPlayer(rouletteGame, playerPosition);
-                return null;
             }
         });
     }
 
     public void placeBet(final PlayerBet playerBet) {
 
-        lockTemplate.perform(new LockAction<Void>() {
+        lockTemplate.performVoid(new VoidLockAction() {
             @Override
-            protected Void apply(RouletteGame rouletteGame) {
+            protected void apply(RouletteGame rouletteGame) {
                 croupier.placeBet(rouletteGame, playerBet);
-                return null;
             }
         });
     }
 
     public void announceWinningPocket(final Pocket pocket) {
 
-        lockTemplate.perform(new LockAction<Void>() {
+        lockTemplate.performVoid(new VoidLockAction() {
             @Override
-            protected Void apply(RouletteGame rouletteGame) {
+            protected void apply(RouletteGame rouletteGame) {
                 croupier.announceWinningPocket(rouletteGame, pocket);
-                return null;
             }
         });
     }

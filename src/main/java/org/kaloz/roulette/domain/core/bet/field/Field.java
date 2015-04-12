@@ -12,9 +12,6 @@ import com.google.common.collect.ImmutableList;
 @Data
 public abstract class Field {
 
-    protected final static BigDecimal NUMBER_MULTIPLIER = new BigDecimal(36);
-    protected final static BigDecimal FIELD_MULTIPLIER = new BigDecimal(2);
-
     protected ImmutableList<Integer> pockets;
     private BigDecimal multiplier;
 

@@ -12,6 +12,7 @@ import org.kaloz.roulette.domain.core.result.BetResult;
 import org.kaloz.roulette.domain.core.PlayerBet;
 import org.kaloz.roulette.domain.core.position.PlayerPosition;
 import org.kaloz.roulette.domain.core.Pocket;
+import org.kaloz.roulette.domain.exception.PlayerNotRegisteredException;
 
 @Named
 @Slf4j

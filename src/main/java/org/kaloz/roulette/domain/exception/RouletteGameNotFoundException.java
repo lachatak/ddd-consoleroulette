@@ -1,4 +1,4 @@
-package org.kaloz.roulette.domain;
+package org.kaloz.roulette.domain.exception;
 
 public class RouletteGameNotFoundException extends RuntimeException {
 

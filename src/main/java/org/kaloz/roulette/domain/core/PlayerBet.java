@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import org.apache.commons.lang3.Validate;
-import org.kaloz.roulette.domain.core.Player;
 import org.kaloz.roulette.domain.core.bet.Bet;
 
 @Data

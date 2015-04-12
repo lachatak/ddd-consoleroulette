@@ -8,7 +8,7 @@ import javax.inject.Named;
 
 import org.apache.commons.lang3.Validate;
 import org.kaloz.roulette.domain.RouletteGame;
-import org.kaloz.roulette.domain.RouletteGameNotFoundException;
+import org.kaloz.roulette.domain.exception.RouletteGameNotFoundException;
 import org.kaloz.roulette.domain.RouletteGameRepository;
 import org.kaloz.roulette.domain.core.RouletteGameId;
 import org.kaloz.roulette.infrastucture.adapters.driven.persistence.assembler.PersistenceRouletteGameAssembler;

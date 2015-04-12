@@ -38,13 +38,13 @@ public class LockTemplateUTest {
 
     private AtomicBoolean atomicBoolean;
 
-    private LockAction<Integer> lockAction;
+    private ReturnLockAction<Integer> returnLockAction;
 
     @Before
     public void before() {
         atomicBoolean = new AtomicBoolean();
         when(rouletteGameRepository.load()).thenReturn(rouletteGame);
-        lockAction = new LockAction<Integer>() {
+        returnLockAction = new ReturnLockAction<Integer>() {
             @Override
             protected Integer apply(final RouletteGame rouletteGame) {
                 rouletteGame.playerPositions();
@@ -60,7 +60,7 @@ public class LockTemplateUTest {
         when(lock.tryLock(2000, TimeUnit.MILLISECONDS)).thenReturn(true);
 
         // act
-        Integer result = testObj.perform(lockAction);
+        Integer result = testObj.performReturn(returnLockAction);
 
         // assert
         assertThat(result.intValue(), equalTo(1));
@@ -77,7 +77,7 @@ public class LockTemplateUTest {
         when(lock.tryLock(2000, TimeUnit.MILLISECONDS)).thenReturn(false);
 
         // act
-        Integer result = testObj.perform(lockAction);
+        Integer result = testObj.performReturn(returnLockAction);
 
         // assert
         assertNull(result);
@@ -91,7 +91,7 @@ public class LockTemplateUTest {
         when(lock.tryLock(2000, TimeUnit.MILLISECONDS)).thenThrow(new RuntimeException());
 
         // act
-        Integer result = testObj.perform(lockAction);
+        Integer result = testObj.performReturn(returnLockAction);
 
         // assert
         assertNull(result);
@@ -106,7 +106,7 @@ public class LockTemplateUTest {
         doThrow(new RuntimeException()).when(lock).unlock();
 
         // act
-        Integer result = testObj.perform(lockAction);
+        Integer result = testObj.performReturn(returnLockAction);
 
         // assert
         assertThat(result.intValue(), equalTo(1));
@@ -120,7 +120,7 @@ public class LockTemplateUTest {
         when(lock.tryLock(2000, TimeUnit.MILLISECONDS)).thenReturn(true);
 
         // act
-        Integer result = testObj.perform(new LockAction<Integer>() {
+        Integer result = testObj.performReturn(new ReturnLockAction<Integer>() {
             @Override
             protected Integer apply(final RouletteGame rouletteGame) {
                 throw new RuntimeException();

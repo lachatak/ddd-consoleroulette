@@ -26,13 +26,13 @@ public class LockTemplate {
         this.lock = lock;
     }
 
-    public <T> T perform(final LockAction<T> lockAction) {
+    public <T> T performReturn(final ReturnLockAction<T> returnLockAction) {
         try {
             if (lock.tryLock(WAIT_TIME_IN_MILLIES, TimeUnit.MILLISECONDS)) {
                 T result;
                 try {
                     RouletteGame rouletteGame = rouletteGameRepository.load();
-                    result = lockAction.apply(rouletteGame);
+                    result = returnLockAction.apply(rouletteGame);
                     rouletteGameRepository.update(rouletteGame);
                 } finally {
                     try {
@@ -47,5 +47,15 @@ public class LockTemplate {
             log.error("Error:", e);
         }
         return null;
+    }
+
+    public void performVoid(final VoidLockAction voidLockAction) {
+        performReturn(new ReturnLockAction<Void>() {
+            @Override
+            protected Void apply(RouletteGame rouletteGame) {
+                voidLockAction.apply(rouletteGame);
+                return null;
+            }
+        });
     }
 }

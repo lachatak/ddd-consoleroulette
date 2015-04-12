@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kaloz.roulette.domain.RouletteGame;
-import org.kaloz.roulette.domain.RouletteGameNotFoundException;
+import org.kaloz.roulette.domain.exception.RouletteGameNotFoundException;
 import org.kaloz.roulette.domain.core.RouletteGameId;
 import org.kaloz.roulette.infrastucture.adapters.driven.persistence.assembler.PersistenceRouletteGameAssembler;
 import org.kaloz.roulette.infrastucture.adapters.driven.persistence.data.PersistenceRouletteGame;
